@@ -15,7 +15,7 @@ function App() {
         <Routes>
           {/* 1. RUTA PÚBLICA */}
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+        
 
           {/* 2. PROTECCIÓN DE RUTAS */}
           <Route element={<ProtectedRoute />}>

@@ -26,6 +26,9 @@ const Estudiantes = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     
+    // Obtenemos el nombre del usuario (puedes ajustar de dónde viene el dato)
+    const userName = localStorage.getItem('userName') || 'Usuario';
+
     // Estados para el Modal
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentEditItem, setCurrentEditItem] = useState(null); // Si es null = CREAR, Si tiene datos = EDITAR
@@ -88,7 +91,12 @@ const Estudiantes = () => {
     return (
         <div className="p-6">
             <div className="flex justify-between items-center mb-6">
-                <h1 className="text-3xl font-bold text-gray-800">{MODULE_CONFIG.title}</h1>
+                {/* Título con mensaje de bienvenida */}
+                <div>
+                    <p className="text-gray-600 text-sm">Bienvenido, {userName}</p>
+                    <h1 className="text-3xl font-bold text-gray-800">{MODULE_CONFIG.title}</h1>
+                </div>
+                
                 <button 
                     onClick={() => handleOpenModal(null)} // null significa "Crear Nuevo"
                     className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow">
